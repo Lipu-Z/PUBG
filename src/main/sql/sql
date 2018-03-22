@@ -1,0 +1,18 @@
+CREATE DATABASE pubg;
+USE pubg;
+
+CREATE TABLE user(
+  user_ID VARCHAR(200) NOT NULL COMMENT 'user login id',
+  user_password VARCHAR(200) NOT NULL COMMENT 'user pwd',
+  player_id VARCHAR(120) NULL COMMENT 'users game id',
+  PRIMARY KEY (user_ID)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT 'web user login info';
+
+CREATE TABLE player(
+  player_id VARCHAR(200) NOT NULL COMMENT 'users in game player id',
+  play_status TINYINT NOT NULL DEFAULT 1 COMMENT 'player status 1:normal,-1:banned,0:suspicious',
+  play_numbers BIGINT NOT NULL DEFAULT 0 COMMENT 'game played times',
+  play_death BIGINT NOT NULL DEFAULT 0 COMMENT 'game play deaths',
+  play_killed BIGINT NOT NULL DEFAULT 0 COMMENT  'game play kill',
+  PRIMARY KEY (player_id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT 'user personal statistic';
