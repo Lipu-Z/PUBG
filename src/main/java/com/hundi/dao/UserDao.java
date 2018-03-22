@@ -8,12 +8,12 @@ import org.apache.ibatis.annotations.Param;
  * @date 3/22/2018
  */
 public interface UserDao {
-    int addUser(String userId, String userpwd);
+    int addUser(@Param("userID") String userID, @Param("userpwd") String userpwd);
 
-    String getPassord(String userId);
+    String getPassword(String userID);
 
-    String modifyPassword(String userId, String newpwd);
+    int modifyPassword(@Param("userID") String userID, @Param("newpwd") String newpwd);
 
-    String getPlayerId(String userId);
+    String getPlayerID(String userID);
 
 }
