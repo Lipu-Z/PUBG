@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hundi.dao.UserDao">
+
+    <insert id="addUser">
+        INSERT INTO loginuser(user_ID, user_password)
+        VALUE (#{userID},#{userpwd})
+    </insert>
+
+    <select id="getPassword" resultType="String">
+        SELECT loginuser.user_password
+        FROM loginuser
+        WHERE
+        loginuser.user_ID = #{userID}
+    </select>
+
+    <update id="modifyPassword">
+       UPDATE
+       loginuser
+       SET
+       user_password=#{newpwd}
+       WHERE
+       user_ID=#{userID}
+    </update>
+
+    <select id="getPlayerID" resultType="String">
+        SELECT player_ID
+        FROM loginuser
+        WHERE
+        user_ID=#{userID}
+    </select>
+
+</mapper>

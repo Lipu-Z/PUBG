@@ -6,6 +6,7 @@ package com.hundi.entity;
  * @date 3/22/2018
  */
 public class Player {
+
     private String playerAlias;
     private int playCount;
     private int deathCount;

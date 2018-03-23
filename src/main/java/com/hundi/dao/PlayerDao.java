@@ -7,7 +7,7 @@ package com.hundi.dao;
  */
 public interface PlayerDao {
     int getKillCount(String playerID);
-    int getDeatCount(String playerID);
+    int getDeathCount(String playerID);
     int getPlayCount(String playerID);
     int getStatus(String playerID);
 }

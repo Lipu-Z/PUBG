@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hundi.dao.PlayerDao">
+    <select id="getKillCount" resultType="int">
+        SELECT play_killed FROM player
+        WHERE
+        player_id=#{playerID}
+    </select>
+    <select id="getDeathCount" resultType="int">
+        SELECT play_death FROM player
+        WHERE
+        player_id=#{playerID}
+    </select>
+    <select id="getPlayCount" resultType="int">
+        SELECT play_numbers FROM player
+        WHERE
+        player_id=#{playerID}
+    </select>
+    <select id="getStatus" resultType="int">
+        SELECT play_status FROM player
+        WHERE
+        player_id=#{playerID}
+    </select>
+
+</mapper>
