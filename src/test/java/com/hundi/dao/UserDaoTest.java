@@ -22,12 +22,12 @@ public class UserDaoTest {
     private UserDao userDao;
     @Test
     public void addUser() throws Exception {
-        userDao.addUser("test1","totototo");
+        userDao.addUser("test2","totototo");
     }
 
     @Test
     public void getPassword() throws Exception {
-        System.out.println(userDao.getPassword("test1"));
+        System.out.println(userDao.getPassword("test2"));
     }
 
     @Test
